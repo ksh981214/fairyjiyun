@@ -7,6 +7,11 @@ assert subscription_key
 
 app = Flask(__name__)
 
+@app.route('/hello')
+def hello():
+      return "hello"
+
+
 @app.route('/')
 def hello_world():
   vision_base_url = "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/"
@@ -27,6 +32,8 @@ def hello_world():
   image_caption = analysis["description"]["captions"][0]["text"].capitalize()
 
   return render_template('index.php', image_caption=image_caption)
+
+  
 
 if __name__ == '__main__':
   app.run()
