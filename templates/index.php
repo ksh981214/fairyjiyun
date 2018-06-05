@@ -37,7 +37,9 @@
  ?>
 
  <script>
-       alert(window.location.href);
+       
+       var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+       alert(newURL);
        </script>
  <form action="index.php" method="post" enctype="multipart/form-data">
       <input type="file" name="file" /><br />
