@@ -18,12 +18,12 @@ def hello_world():
   vision_analyze_url = vision_base_url + "analyze"
 
 	# Set image_url to the URL of an image that you want to analyze.
-  image_url = ""
+  image_path = 'C:/Users/pic/microphone.jpg'
 
   headers  = {'Ocp-Apim-Subscription-Key': subscription_key }
   params   = {'visualFeatures': 'Categories,Description,Color'}
-  data     = {'url': image_url}
-  response = requests.post(vision_analyze_url, headers=headers, params=params, json=data)
+  image_data= open(image_path,"rb").read()
+  response = requests.post(vision_analyze_url, headers=headers, params=params, data=image_data)
   response.raise_for_status()
 
   analysis = response.json()
