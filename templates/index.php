@@ -18,10 +18,9 @@
  
                if(@move_uploaded_file($file['tmp_name'], $upload_file)) {
                     @chmod($upload_file, 0707);
-$return = '<script type="text/javascript">function copy(str) { clipboardData.setData("Text", str); alert("경로가 복사 됨"); }
-</script>';
-$return.= '업로드 된 파일 경로 : . <a href="'.$upload_file.'">'.$upload_file.'</a> ';
-return $return;
+
+                        $return= '업로드 된 파일 경로 : . <a href="'.$upload_file.'">'.$upload_file.'</a> ';
+                        return $return;
 
                } else {
                     exit('<script type="text/javascript">alert(\'업로드에 실패하였습니다!\'); history.go(-1);</script>');
