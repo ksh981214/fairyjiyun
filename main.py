@@ -18,8 +18,7 @@ def hello_world():
   vision_analyze_url = vision_base_url + "analyze"
 
 	# Set image_url to the URL of an image that you want to analyze.
-  image_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/" + \
-	    "Broadway_and_Times_Square_by_night.jpg/450px-Broadway_and_Times_Square_by_night.jpg"
+  image_url = ""
 
   headers  = {'Ocp-Apim-Subscription-Key': subscription_key }
   params   = {'visualFeatures': 'Categories,Description,Color'}
@@ -31,7 +30,7 @@ def hello_world():
   
   image_caption = analysis["description"]["captions"][0]["text"].capitalize()
 
-  return render_template('index.php', image_caption=image_caption)
+  return render_template('index.html', image_caption=image_caption)
 
   
 
