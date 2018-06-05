@@ -26,7 +26,7 @@ def hello_world():
   
   image_caption = analysis["description"]["captions"][0]["text"].capitalize()
 
-  return render_template('index.html', image_caption=image_caption)
+  return render_template('index.php', image_caption=image_caption)
 
 if __name__ == '__main__':
   app.run()
